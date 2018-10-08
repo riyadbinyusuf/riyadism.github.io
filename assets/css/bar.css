@@ -1,0 +1,111 @@
+#chart {
+  height: 300px;
+  margin: 30px auto 0;
+  display: table;
+}
+#chart #numbers {
+  width: 50px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  float: left;
+}
+#chart #numbers li {
+  text-align: right;
+  padding-right: 1em;
+  list-style: none;
+  height: 29px;
+  border-bottom: 1px solid #444;
+  position: relative;
+  bottom: 30px;
+}
+#chart #numbers li:last-child {
+  height: 30px;
+}
+#chart #numbers li span {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+#chart #bars {
+  display: inline-block;
+  height: 300px;
+  padding: 0;
+  margin: 0;
+}
+#chart #bars li {
+  display: table-cell;
+  width: 80px;
+  height: 300px;
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+#chart #bars li .bar {
+  display: block;
+  width: 70%;
+  margin-left: 15px;
+  background: #49E;
+  position: absolute;
+  bottom: 0;
+}
+
+#chart #bars li:first-child .bar {
+  background: #e34f26;
+}
+#chart #bars li:nth-child(2) .bar {
+  background: #006FBA;
+}
+#chart #bars li:nth-child(3) .bar {
+  background: #F0BD20;
+}
+#chart #bars li:nth-child(4) .bar {
+  background: #8892be;
+}
+#chart #bars li:nth-child(5) .bar {
+  background: #6AF9C4;
+}
+#chart #bars li:last-child .bar {
+  background: #64E572;
+}
+
+#chart #bars li span {
+  text-align: center;
+}
+@media (max-width: 630px) {
+  #chart #bars li {
+    width: 50px;
+  }
+  #chart #bars li .bar {
+    margin-left: 0;
+  }
+}
+#chart #bars li .bar:hover {
+  background: #333;
+  cursor: pointer;
+}
+#chart #bars li .bar:hover:before {
+  color: #333;
+  content: attr(data-percentage) '%';
+  position: relative;
+  bottom: 25px;
+}
+.darkbg-default #chart #bars li .bar:hover:before {
+  color: #fff;
+}
+#chart #bars li span.bar-name {
+  width: 100%;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  text-align: center;
+}
+@media (max-width: 630px) {
+  #chart #bars li span.bar-name {
+    bottom: -4em;
+    left: -20px;
+    transform: rotate(-45deg);
+  }
+}

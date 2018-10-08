@@ -1,0 +1,965 @@
+
+/*
+-----------------------------------------------
+	About Style
+-----------------------------------------------
+ */
+
+.about-content {
+	.about-header h2 {
+		@extend %section-title;
+		text-transform: initial;
+		font-size: 25px;
+		letter-spacing: 2px;
+		&::after {
+			display: block;
+			@include line();
+			background-color: $sectitle-after-color;
+			@include margin-top-bottom(25px, 30px);
+		}
+	}
+	@include MQ($M, $maxw) {
+		@include margin-bottom(50px);
+	}
+}
+
+.about-text {
+	@include line-height(28px);
+	letter-spacing: 1px;
+}
+
+.about-img {
+	.block-center img {
+		@include MQ($S, $maxw) {
+			width: 100%;
+		}
+	}
+	> h4 {
+		background-color: $dark-color;
+		color: $white-color;
+		display: table;
+		margin: 0 auto 35px;
+		padding: 5px 15px;
+	}
+}
+
+.block-center {
+	@include horcenter;
+}
+
+.highcharts-grid-line {
+	display: none;
+}
+
+.tooltip {
+	position: relative;
+	float: right;
+}
+
+.tooltip>.tooltip-inner {
+	background-color: #efefef;
+	padding: 5px 8px;
+	color: rgb(23, 44, 66);
+	font-size: 12px;
+}
+
+.popOver+.tooltip>.tooltip-arrow {
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #efefef;
+}
+.progress {
+	border-radius: 0;
+	height: 10px;
+	margin-bottom: 15px;
+	overflow: visible;
+	box-shadow: none;
+}
+
+.progress-bar {
+	background: rgb(23, 44, 60);
+	-webkit-transition: width 1.5s ease-in-out;
+	transition: width 1.5s ease-in-out;
+}
+
+
+/*
+-----------------------------------------------
+	Resume
+-----------------------------------------------
+ */
+
+.box {
+	@include margin-bottom(30px);
+	@extend %box-shadow-front;
+	>.fa {
+		color: $default-color;
+		@include icon();
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	}
+	&:hover .fa {
+		background-color: $default-color;
+		color: $white-color;
+		outline-color: $default-color;
+	}
+}
+
+.box-wide {
+	position: relative;
+	border: 2px solid #ebebeb;
+	@include padding(0, 20px, 20px, 140px);
+	@include margin-top(10px);
+	@extend %transition;
+	@include MQ($S, $maxw) {
+		@include padding(135px, 15px, 15px, 15px);
+	}
+	>.fa {
+		position: absolute;
+		top: 30px;
+		left: 30px;
+		@include MQ($S, $maxw) {
+			left: 15px;
+		}
+	}
+	.box-wide-inner {
+		>h3 {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: $default-font-size + 2;
+			@include padding-top(5px);
+			@extend %transition;
+		}
+		.uline {
+			@extend %uline;
+			@include uline(32px, #d7d7d7);
+			@include margin-top-bottom(20px, 15px);
+			&::after {
+				@extend %uline-after;
+				@include uline-after(32px);
+			}
+		}
+		p {
+			letter-spacing: 1px;
+		}
+	}
+	&:hover {
+		@extend %box-shadow;
+		border-color: #fff;
+		.box-wide-inner>h3 {
+			&::after {
+				background-color: $title-border-color;
+			}
+		}
+		.uline::after {
+			margin-left: 0;
+		}
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Counter Section
+-----------------------------------------------
+ */
+
+#counter {
+	background-color: $bg-color;
+}
+
+.counter-box {
+	@include horcenter;
+	.counting {
+		font-size: $default-font-size + 21;
+		text-align: center;
+		font-weight: bold;
+		font-family: AudioWide;
+		@include margin-bottom(30px);
+	}
+	.icon-counter {
+		font-size: $default-font-size + 21;
+		letter-spacing: 2px;
+		@extend %transition;
+		>.fa {
+			vertical-align: middle;
+			@include margin-top(5px);
+		}
+	}
+	.counter-text {
+		font-size: $default-font-size + 2;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		@include margin-top(20px);
+	}
+	&:hover {
+		.counter-text::after {
+			background-color: $default-color;
+		}
+	}
+	@include MQ($M, $maxw) {
+		@include margin-top-bottom(30px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Services Section
+-----------------------------------------------
+ */
+
+#services {
+	.section-padding {
+		padding-top: 30px;
+	}
+}
+
+.service-box {
+	padding: 30px;
+	@extend %transition;
+	@include margin-top(10px);
+	h3 {
+		font-size: $default-font-size + 2;
+		font-weight: bold;
+		letter-spacing: 2.2px;
+		@include margin-bottom(20px);
+	}
+	&:hover {
+		@extend %box-shadow;
+		border-color: $white-color;
+	}
+}
+
+.service-caption {
+	padding-top: 30px;
+	h3 {
+		text-transform: inherit;
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Keep Exploring
+-----------------------------------------------
+ */
+
+#exploring {
+	background-color: $bg-color;
+	h2 {
+		font-size: $default-font-size + 16;
+		letter-spacing: 5px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	h3 {
+		font-size: $default-font-size + 6;
+		text-transform: inherit !important;
+		font-weight: 300;
+	}
+	.btn-xplore {
+		font-weight: 600;
+		letter-spacing: 1px;
+		@include padding-left-right(20px, 20px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Portfolio Section
+-----------------------------------------------
+ */
+
+
+/* Portfolio Filtering Category */
+
+#filter {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 50px;
+	@include horcenter;
+	li {
+		font-size: $default-font-size + 2;
+		float: left;
+		cursor: pointer;
+		&::before {
+			content: "|";
+			@include margin-left-right(10px, 10px);
+			@include MQ(600px, $maxw) {
+				display: none;
+			}
+		}
+		&:first-child::before {
+			display: none;
+		}
+		span.active {
+			background-color: $default-color;
+			color: $white-color;
+			padding: 3px 5px;
+		}
+		@include MQ(600px, $maxw) {
+			float: none;
+			display: list-item;
+			height: 50px;
+		}
+	}
+}
+
+
+/* Portfolio Item */
+
+#pfolio-content {
+	clear: both;
+	position: relative;
+	@include margin-top(50px);
+	@include margin-left(15px);
+	@include MQ(600px, $maxw) {
+		@include margin-left(0);
+	}
+	.item {
+		width: 24.4%;
+		float: left;
+		@include margin-right(10px);
+		@include margin-bottom(10px);
+		@include MQM(1441px, 1561px) {
+			width: 24.3%;
+		}
+		@include MQ(1440px, $maxw) {
+			width: 32.40%;
+		}
+		@include MQ($M, $maxw) {
+			width: 48%;
+		}
+		@include MQ($T, $maxw) {
+			width: 100%;
+			@include margin-bottom(30px);
+		}
+	}
+}
+
+
+/* Portfolio Hover */
+
+.item-inner {
+	position: relative;
+	@include overflow;
+	.hover-bg {
+		@extend %item-hover;
+	}
+	>.project-link {
+		img {
+			max-width: 100%;
+			min-width: 100%;
+		}
+	}
+	.item-info {
+		@extend %item-info;
+		>h3 {
+			@extend %item-title-h3;
+		}
+		>h4 {
+			@extend %item-title-h4;
+		}
+		&:hover .uline::after {
+			margin-left: 0;
+		}
+	}
+	.uline {
+		@include margin-top(25px);
+		@extend %uline;
+		@include uline(49px, $white-color);
+		&::after {
+			@extend %uline-after;
+			background-color: darken($default-color, 5%);
+			@include uline-after(49px);
+		}
+	}
+	@extend %item-hover-bg;
+	&:hover .item-info {
+		opacity: 1;
+	}
+	img {
+		@extend %transition;
+		z-index: -1;
+	}
+	&:hover img {
+		transform: scale(1.2);
+	}
+	@include MQ($T, $maxw) {
+		@include horcenter;
+	}
+}
+
+
+/* Portfolio Popup Project View */
+
+.project-main img {
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.project-sb-widget {
+	color: $section-header-color;
+	text-transform: uppercase;
+	@include margin-bottom(40px);
+	h2 {
+		font-size: $default-font-size + 6;
+		font-weight: 600;
+	}
+	p {
+		border-bottom: 1px solid #b5b5b5;
+		font-size: $default-font-size + 2;
+		@include padding-bottom(10px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Subscribe Section
+-----------------------------------------------
+ */
+
+#subscribe {
+	@extend %background-attr;
+	color: $white-color;
+	.overlay {
+		background-color: $overlay-color;
+		@include padding-top-bottom(30px,
+		20px);
+	}
+	.section-padding {
+		@include padding-top(50px);
+	}
+}
+
+
+/* Subscribe Header */
+
+.subscribe-header {
+	@extend .about-header;
+	h2 {
+		font-size: $default-font-size + 4;
+		color: $white-color;
+		letter-spacing: 2.2px;
+		font-weight: 600;
+		&::after {
+			display: block;
+			@include line();
+			@include margin-top-bottom(20px,
+			20px);
+			background-color: $white-color;
+			width: 57px;
+			height: 1px;
+		}
+		@include MQ($T,
+		$maxw) {
+			display: table;
+			margin: 0 auto;
+		}
+	}
+	@include MQ($T,
+	$maxw) {
+		text-align: center;
+	}
+}
+
+
+/* Subscribe Form */
+
+#mc-form {
+	@include horcenter();
+	@include margin-top(60px);
+	>.form-control {
+		@extend %bg-border;
+		color: $white-color;
+		width: 280px;
+		border-color: $white-color;
+		border-right: 0;
+		@include MQ($T,
+		$maxw) {
+			@include margin-bottom(20px);
+			@include margin-left(-6px);
+		}
+		@include MQ($T,
+		$maxw) {
+			border-right: 1px solid $white-color;
+		}
+		&::placeholder {
+			color: #fff;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			filter: alpha(opacity=50);
+			opacity: 0.5;
+			padding-left: 0;
+		}
+	}
+	>label {
+		display: block;
+		@include margin-top(10px);
+	}
+	>.btn {
+		@extend %bg-border;
+		width: 130px;
+		border: 1px solid #fff;
+		@include margin-left(-6px);
+		@extend %transition;
+		&:hover,
+		&:focus {
+			@extend %btn-hover;
+			border-color: $default-color;
+		}
+		@include MQ($T,
+		$maxw) {
+			@include horcenter;
+		}
+	}
+	@include MQ($T,
+	$maxw) {
+		@include margin-top(30px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Crew Section
+-----------------------------------------------
+ */
+
+.member {
+	border: 1px solid #d7d7d7;
+	.member-thumb {
+		position: relative;
+		@include overflow();
+		>img {
+			width: 100%;
+		}
+		.overlay {
+			background-color: $overlay-color;
+			height: 100%;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			top: -100%;
+			@extend %transition;
+		}
+	}
+	.member-social {
+		position: absolute;
+		left: 50%;
+		bottom: -50px;
+		width: 125px;
+		margin-left: -62.5px;
+		@extend %transition;
+		transition-delay: .3s;
+		a {
+			@include icon(35px,
+			35px);
+			background-color: $default-color;
+			color: $white-color;
+			font-size: $default-font-size + 2;
+			border-radius: 0;
+			display: inline-block;
+			@include margin-right(5px);
+			&:last-child {
+				@include margin-right(0);
+			}
+			&:hover {
+				background-color: #fff;
+				color: $default-color;
+			}
+		}
+	}
+	.member-info {
+		color: $section-header-color;
+		letter-spacing: 2px;
+		>h3 {
+			font-size: $default-font-size + 3;
+			font-weight: 600;
+			@include margin-top-bottom(12px,
+			0);
+		}
+		>p {
+			font-size: $default-font-size - 2;
+			@include margin-bottom(5px);
+		}
+	}
+	&:hover {
+		.member-thumb .overlay {
+			top: 0;
+		}
+		.member-thumb .member-social {
+			bottom: 21px;
+		}
+	}
+	@include MQ($M,
+	$maxw) {
+		@include margin-bottom(50px);
+	}
+	@include MQ($T,
+	$maxw) {
+		@include horcenter;
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Testimonial Section
+-----------------------------------------------
+ */
+
+#testimonial {
+	background-color: $bg-color;
+	.section-header {
+		@include padding-top-bottom(20px,
+		40px);
+		> h2 {
+			font-size: $default-font-size + 30;
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+		> h3 {
+			font-size: $default-font-size + 4;
+			letter-spacing: 5px;
+			font-weight: 700;
+		}
+	}
+}
+
+#owl-tm {
+	@include margin-bottom(15px);
+	.oc-item {
+		font-style: italic;
+		letter-spacing: 2.2px;
+		.client-comment>blockquote {
+			font-size: $default-font-size + 2;
+			border: medium none;
+		}
+		.client-info h3 {
+			color: $default-color;
+			font-size: $default-font-size + 6;
+		}
+		.client-image>img {
+			border: 6px solid $default-color;
+			border-radius: 50%;
+		}
+	}
+	.owl-controls {
+		.owl-page>span {
+			background-color: transparent;
+			border: 1px solid $default-color;
+			opacity: 1;
+		}
+		.owl-page.active>span {
+			background-color: $default-color;
+		}
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Blog Section
+-----------------------------------------------
+ */
+
+.blog-post {
+	display: table;
+	color: $title-border-color;
+	letter-spacing: 2px;
+	@include MQ($M,
+	$maxw) {
+		@include margin-bottom(30px);
+	}
+	@include MQ($L) {
+		@include horcenter;
+	}
+	.blog-media img {
+		width: 100%;
+		height: auto;
+	}
+	.blog-content {
+		background-color: $bg-color;
+		@include padding-top(20px);
+		@include padding-left-right(25px,
+		25px);
+		>.post-excerpt,
+		.blog-meta>p {
+			@include margin-bottom(15px);
+		}
+		.blog-meta {
+			@include margin-bottom(35px);
+		}
+		@include MQ($L) {
+			@include padding-top-bottom(10px,
+			20px);
+		}
+	}
+	.uline {
+		@include margin-top-bottom(12px,
+		25px);
+		@extend %uline;
+		@include uline(34px,
+		$default-color);
+		&::after {
+			@extend %uline-after;
+			background-color: #ddd;
+			@include uline-after(34px);
+		}
+	}
+	&:hover .uline::after {
+		@include margin-left(0);
+	}
+	.blog-title {
+		.blog-permalink h2,
+		.blog-author {
+			color: $primary-color;
+		}
+		>.blog-permalink h2 {
+			font-size: $default-font-size + 2;
+			font-weight: 600;
+			@include margin-bottom(5px);
+		}
+	}
+}
+
+.more-blog {
+	margin-top: 50px;
+	@include horcenter;
+	@include MQ(640px,
+	$maxw) {
+		@include margin-top(20px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Pricing Section
+-----------------------------------------------
+ */
+
+.plan-features {
+	border: 1px solid #cccccc;
+	list-style: none;
+	padding: 0;
+	width: 320px;
+	@include horcenter();
+	@include margin-top(10px);
+	@extend %transition;
+	.plan-name {
+		font-size: $default-font-size + 6;
+		font-weight: 600;
+		text-transform: uppercase;
+		@include padding-top-bottom(35px,
+		35px);
+	}
+	li {
+		border-bottom: 1px solid #e1e1e1;
+		@include padding-top-bottom(10px,
+		10px);
+		&:last-child {
+			border: medium none;
+		}
+	}
+	.plan-signup {
+		@include padding-top-bottom(25px,
+		25px);
+		.btn-signup {
+			border: 1px solid #707070;
+			@include padding-left-right(18px,
+			18px);
+		}
+	}
+	&.popular-plan,
+	&:hover {
+		border-color: $white-color;
+		@extend %box-shadow;
+		.btn-signup {
+			border-color: $default-color;
+		}
+	}
+	@include MQ($M,
+	$maxw) {
+		@include margin-bottom(30px);
+	}
+	@include MQ($XS,
+	$maxw) {
+		width: 280px;
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Get in Touch
+-----------------------------------------------
+ */
+
+
+/* Footer Logo and Social links */
+
+#contact {
+	background-color: $bg-color;
+	.footer-logo {
+		@include margin-bottom(12px);
+	}
+	.footer-about-text {
+		ul li {
+			list-style: none !important;
+		}
+	}
+	ul {
+		padding-left: 0;
+		li {
+			position: relative;
+			list-style: none;
+			padding: 0 0 10px 50px;
+			.fa {
+				position: absolute;
+				height: 30px;
+				width: 30px;
+				top: 0;
+				left: 0;
+				color: $default-color;
+				text-align: center;
+			}
+		}
+	}
+}
+
+#contact .follow-us,
+.follow-us {
+	>h4 {
+		font-size: $default-font-size + 6;
+	}
+	a {
+		@include icon(35px,
+		35px);
+		outline: 0;
+		color: $white-color;
+		display: inline-block;
+		font-size: $default-font-size + 6;
+		background-color: $default-color;
+		border-radius: 0;
+		@include margin-top(10px);
+		@include margin-right(5px);
+		&:last-child {
+			@include margin-right(0);
+		}
+		&:hover {
+			background-color: $white-color;
+			color: $default-color;
+		}
+	}
+}
+
+
+/* Contact Form */
+
+#contact-form {
+	label {
+		display: none;
+	}
+	.form-control {
+		@extend %form-control;
+		&:focus {
+			box-shadow: none;
+			border-color: $default-color;
+		}
+		&::placeholder {
+			//color: #fff;
+			-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+			filter: alpha(opacity=80);
+			opacity: 0.8;
+			padding-left: 0;
+		}
+	}
+	#message {
+		height: 100px;
+	}
+	.btn-contact {
+		@include button;
+		background-color: $default-color;
+		border-radius: 0;
+		border-width: 1px;
+		color: $white-color;
+	}
+	@include MQ($T,
+	$maxw) {
+		@include margin-top(50px);
+	}
+}
+
+
+/*
+-----------------------------------------------
+	Dark Color
+-----------------------------------------------
+ */
+
+.darkbg-default {
+	background-color: $darkbg-default-color;
+	color: $white-color !important;
+	#welcome {
+		background-image: url("../img/bg-image/welcome-dark-bg.jpg") !important;
+	}
+	.scroll-down .vline::before {
+		border-color: #afafaf !important;
+	}
+	.scroll-down .vline>span {
+		background-color: $white-color !important;
+	}
+	.about-header h2,
+	#contact-form .form-control {
+		color: $white-color;
+	}
+	.box {
+		box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+	}
+	.current-menu-item::before,
+	.scroll-down p,
+	.box .fa,
+	#filter li a,
+	#contact ul li .fa,
+	.welcome-inner .welcome-heading .welcome-title>span,
+	.welcome-inner .welcome-text,
+	.navbar-default li a {
+		color: $white-color;
+	}
+	.welcome-inner .welcome-heading .welcome-title,
+	#owl-tm .oc-item .client-info h3 {
+		color: #afafaf;
+	}
+	.box-wide {
+		border-color: $darkbg-default-color;
+	}
+
+	.navbar.navbar-default.navbar-fixed-top.navbar-bg-color {
+		background-color: $darkbg-deep-color !important;
+	}
+	.slick-active.slick-center {
+		background-color: $darkbg-deep-color !important;
+	}
+	.slick-dots li.slick-active button:before {
+		color: $white-color;
+	}
+	.slick-dots li button:before {
+		color: #ddd;
+	}
+	.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+		color: $white-color;
+	}
+}
+
+.darkbg-deep {
+	background-color: $darkbg-deep-color !important;
+}
+
+.darkbg-gray {
+	background-color: $darkbg-gray-color !important;
+}

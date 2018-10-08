@@ -1,0 +1,78 @@
+//==========================================
+//	Button Style
+//==========================================
+
+
+%btn-hover {
+	color: $default-color;
+	text-decoration: none;
+}
+
+@mixin button {
+	background-color: $default-color;
+	color: $white-color;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	@include padding(10px, 25px, 10px, 25px);
+	@extend %box-shadow-light;
+	@extend %transition;
+
+	&:hover {
+		@extend %btn-hover;
+
+		&::before {
+			right: 50%;
+			top: 0;
+		}
+		&::after {
+			left: 50%;
+			bottom: 0;
+		}
+	}
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		background-color: #f1f3f8;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		@extend %transition;
+	}
+	&::before {
+		right: 100%;
+		top: 100%;
+	}
+	&::after {
+		left: 100%;
+		bottom: 100%;
+	}
+}
+
+.btn-rect {
+	@include button();
+}
+
+.btn-about,
+.btn-xplore,
+.btn-buy {
+
+	font-size: $default-font-size + 2;
+	padding: 10px 15px;
+	@include margin-top(25px);
+}
+
+.btn-about {
+	@include MQM($M, $L) {
+		@include margin-top(10px);
+	}
+}
+
+.btn-more {
+	
+}

@@ -1,0 +1,104 @@
+/*
+-----------------------------------------------
+	Navbar Style
+-----------------------------------------------
+ */
+
+%nav-after {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: $dark-color;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	@extend %transition;
+}
+
+.navbar.navbar-default.navbar-fixed-top {
+	background-color: transparent;
+	border-bottom: medium none;
+
+	.navbar-brand img {
+		margin-top: -5px;
+	}
+	.nav.navbar-nav li a {
+
+			position: relative;
+			margin-right: -5px;
+			&:hover {
+				color: $white-color;
+
+				&::after {
+					opacity: 1;
+				}
+			}
+
+			&::after {
+				@extend %nav-after;
+				opacity: 0;
+			}
+	}
+
+	.nav.navbar-nav li.active a {
+			position: relative;
+			z-index: 1;
+			background-color: transparent;
+			font-weight: bold;
+
+			&::after {
+				@extend %nav-after;
+			}
+	}
+}
+
+.navbar.navbar-default.navbar-fixed-top.navbar-bg-color {
+	background-color: #f1f3f8 !important;
+}
+
+
+/*
+.navbar-default {
+
+		background-color: transparent !important;
+    border: 0;
+    border-radius: 0px;
+    margin-bottom: 0px;
+    @extend %transition;
+		transition-duration: 1s;
+
+    .navbar-brand {
+        @include padding-top-bottom(50px, 10px);
+        @include padding-left-right(0, 0);
+        height: auto;
+        width: auto;
+
+        @include MQ($T, $maxw) {
+	    	padding-top: 20px;
+	    }
+    }
+
+	.navbar-brand {
+		@extend %transition;
+		transition-duration: 1s;
+	}
+
+}
+*/
+.current-menu-item {
+	position: relative;
+}
+
+.current-menu-item::before {
+	content: "\f120";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+	left: -12px;
+	bottom: 9px;
+	position: absolute;
+	color: $default-color;
+}

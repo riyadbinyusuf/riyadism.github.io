@@ -1,0 +1,21 @@
+/*
+-----------------------------------------------
+	Footer
+-----------------------------------------------
+ */
+
+#footer {
+	background-color: #f5f5f5;
+
+	.section-padding {
+		@include padding-top-bottom(30px, 30px);
+	}
+
+	.copyright {
+		@include MQ($M, $maxw) {
+			@include horcenter;
+			@include margin-bottom(15px);
+		}
+	}
+
+}

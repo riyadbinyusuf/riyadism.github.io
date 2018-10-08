@@ -1,0 +1,29 @@
+.scroll-top-wrapper {
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #f1f5f8;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	right: 30px;
+	bottom: 30px;
+	border: 1px solid #ddd;
+	transform: rotate(45deg);
+}
+.scroll-top-wrapper:hover {
+	background-color: #888888;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+	transform: rotate(-45deg);
+}
